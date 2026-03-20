@@ -8,11 +8,11 @@ from telegram.ext import ContextTypes, Application
 from telegram.constants import ParseMode
 from telegram.error import BadRequest
 
-import core.database as db
-import core.wa_engine as wa
-from core.helpers import (is_admin, is_owner, esc, fmt, BACK_BTN,
+import database as db
+import wa_engine as wa
+from helpers import (is_admin, is_owner, esc, fmt, BACK_BTN,
                           send_log, broadcast_owner, edit_msg, kb)
-from core.menus import welcome_text, main_menu, refresh_fsub
+from menus import welcome_text, main_menu, refresh_fsub
 
 HTML = ParseMode.HTML
 

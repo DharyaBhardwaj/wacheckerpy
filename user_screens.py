@@ -5,9 +5,9 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
-import core.database as db
-import core.wa_engine as wa
-from core.helpers import is_admin, is_premium, is_vip, esc, fmt, BACK_BTN, edit_msg
+import database as db
+import wa_engine as wa
+from helpers import is_admin, is_premium, is_vip, esc, fmt, BACK_BTN, edit_msg
 
 HTML = ParseMode.HTML
 

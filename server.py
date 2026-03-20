@@ -10,8 +10,8 @@ from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-import core.database as db
-import core.wa_engine as wa
+import database as db
+import wa_engine as wa
 
 app = FastAPI(title="WA Checker API", docs_url=None, redoc_url=None)
 

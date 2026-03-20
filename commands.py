@@ -6,11 +6,11 @@ from telegram import Update
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
-import core.database as db
-import core.wa_engine as wa
-from core.helpers import is_admin, is_owner, esc, fmt, BACK_BTN, send_log, broadcast_owner
-from core.menus import send_welcome, send_fsub_prompt, check_fsub
-from handlers.admin import show_user_panel
+import database as db
+import wa_engine as wa
+from helpers import is_admin, is_owner, esc, fmt, BACK_BTN, send_log, broadcast_owner
+from menus import send_welcome, send_fsub_prompt, check_fsub
+from admin import show_user_panel
 
 HTML = ParseMode.HTML
 
@@ -23,7 +23,7 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     fname    = msg.from_user.first_name or ""
     args     = ctx.args
 
-    from core.helpers import is_maintenance
+    from helpers import is_maintenance
     if is_maintenance() and not is_admin(uid):
         await msg.reply_text("🔧 <b>Maintenance Mode</b>\n\nPlease try again later.", parse_mode=HTML)
         return

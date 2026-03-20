@@ -13,7 +13,7 @@ from typing import Callable, Optional
 import qrcode
 
 import config
-import core.database as db
+import database as db
 
 logger = logging.getLogger(__name__)
 

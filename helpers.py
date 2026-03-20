@@ -6,7 +6,7 @@ from telegram.constants import ParseMode
 from telegram.ext import Application
 
 import config
-import core.database as db
+import database as db
 
 HTML = ParseMode.HTML
 
