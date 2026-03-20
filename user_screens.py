@@ -5,9 +5,15 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
 from helpers import is_admin, is_premium, is_vip, esc, fmt, BACK_BTN, edit_msg
+=======
+import core.database as db
+import core.wa_engine as wa
+from core.helpers import is_admin, is_premium, is_vip, esc, fmt, BACK_BTN, edit_msg
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 HTML = ParseMode.HTML
 
@@ -225,4 +231,8 @@ async def show_redeem_screen(q, uid: int, ctx):
     await edit_msg(q,
         "🎟 <b>Redeem Code</b>\n━━━━━━━━━━━━━━━━━━━━\n\n"
         "Enter your code to get bonus checks:\n\n<i>Codes are case-insensitive.</i>",
+<<<<<<< HEAD
         BACK_BTN)
+=======
+        BACK_BTN)
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

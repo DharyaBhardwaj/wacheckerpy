@@ -7,6 +7,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
 from helpers import (is_admin, is_owner, is_premium, is_vip,
@@ -15,11 +16,25 @@ from helpers import (is_admin, is_owner, is_premium, is_vip,
 from menus import (welcome_text, main_menu, send_welcome,
                         send_fsub_prompt, refresh_fsub, get_missing_fsub)
 from admin import (show_owner_panel, show_wa_accounts, show_users_list,
+=======
+import core.database as db
+import core.wa_engine as wa
+from core.helpers import (is_admin, is_owner, is_premium, is_vip,
+                          is_maintenance, esc, fmt, BACK_BTN,
+                          edit_msg, send_log, broadcast_owner, kb)
+from core.menus import (welcome_text, main_menu, send_welcome,
+                        send_fsub_prompt, refresh_fsub, get_missing_fsub)
+from handlers.admin import (show_owner_panel, show_wa_accounts, show_users_list,
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
                               show_user_panel, show_fsub_settings, show_bot_settings,
                               show_stats, show_redeem_panel, show_api_keys, show_api_settings,
                               handle_user_ban, handle_add_premium, handle_remove_premium,
                               handle_add_bonus, handle_clear_bonus, handle_user_role)
+<<<<<<< HEAD
 from user_screens import (show_check_number, show_bulk_check, show_tools,
+=======
+from handlers.user_screens import (show_check_number, show_bulk_check, show_tools,
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
                                      show_profile, show_premium_info, show_plan_detail,
                                      show_bundle_detail, show_referral, show_status,
                                      show_help, show_redeem_screen)
@@ -41,7 +56,11 @@ async def on_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 
     db.create_user(uid, q.from_user.username or "", q.from_user.first_name or "")
 
+<<<<<<< HEAD
     from helpers import is_authorized
+=======
+    from core.helpers import is_authorized
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
     if not is_authorized(uid):
         await q.answer("🔒 Access denied.", show_alert=True)
         return
@@ -201,7 +220,11 @@ async def on_callback(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 async def _check_fsub(q, uid, cid, ctx):
+<<<<<<< HEAD
     from menus import check_fsub as _cf
+=======
+    from core.menus import check_fsub as _cf
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
     ok = await _cf(ctx.application, uid)
     if not ok:
         await q.answer("🔒 Join required channels first!", show_alert=True)
@@ -379,4 +402,8 @@ async def _user_wa(q, uid: int, data: str, ctx):
         except asyncio.TimeoutError:
             wa._cb_qr = orig
             await ctx.bot.send_message(cid, "❌ Timed out.",
+<<<<<<< HEAD
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("‹ Back", callback_data="user_wa_panel")]]))
+=======
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("‹ Back", callback_data="user_wa_panel")]]))
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

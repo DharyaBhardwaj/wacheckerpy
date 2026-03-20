@@ -6,7 +6,11 @@ from telegram.constants import ParseMode
 from telegram.ext import Application
 
 import config
+<<<<<<< HEAD
 import database as db
+=======
+import core.database as db
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 HTML = ParseMode.HTML
 
@@ -101,4 +105,8 @@ async def edit_msg(query, text: str, markup: InlineKeyboardMarkup):
     await query.get_bot().send_message(
         query.message.chat_id, text, parse_mode=HTML,
         reply_markup=markup, disable_web_page_preview=True
+<<<<<<< HEAD
     )
+=======
+    )
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

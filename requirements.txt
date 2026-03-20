@@ -8,4 +8,8 @@ aiohttp==3.9.5
 aiofiles==23.2.1
 fastapi==0.115.0
 uvicorn==0.30.6
+<<<<<<< HEAD
 slowapi==0.1.9
+=======
+slowapi==0.1.9
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

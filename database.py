@@ -438,4 +438,8 @@ async def get_next_number(uid: int) -> Optional[dict]:
 async def get_number_count(uid: int) -> int:
     if not _sb: return 0
     r = _sb.table("number_pool").select("id", count="exact").eq("user_id", uid).eq("is_used", 0).execute()
+<<<<<<< HEAD
     return r.count or 0
+=======
+    return r.count or 0
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

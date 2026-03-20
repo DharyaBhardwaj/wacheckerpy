@@ -13,7 +13,11 @@ from typing import Callable, Optional
 import qrcode
 
 import config
+<<<<<<< HEAD
 import database as db
+=======
+import core.database as db
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 logger = logging.getLogger(__name__)
 
@@ -314,4 +318,8 @@ async def connect_all_saved():
                 account_type=a.get("account_type", "checker"),
                 status="disconnected",
                 phone=a.get("phone_number", ""),
+<<<<<<< HEAD
             )
+=======
+            )
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

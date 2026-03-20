@@ -6,11 +6,19 @@ from telegram import Update
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
 from helpers import is_admin, is_owner, esc, fmt, BACK_BTN, send_log, broadcast_owner
 from menus import send_welcome, send_fsub_prompt, check_fsub
 from admin import show_user_panel
+=======
+import core.database as db
+import core.wa_engine as wa
+from core.helpers import is_admin, is_owner, esc, fmt, BACK_BTN, send_log, broadcast_owner
+from core.menus import send_welcome, send_fsub_prompt, check_fsub
+from handlers.admin import show_user_panel
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 HTML = ParseMode.HTML
 
@@ -23,7 +31,11 @@ async def cmd_start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
     fname    = msg.from_user.first_name or ""
     args     = ctx.args
 
+<<<<<<< HEAD
     from helpers import is_maintenance
+=======
+    from core.helpers import is_maintenance
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
     if is_maintenance() and not is_admin(uid):
         await msg.reply_text("🔧 <b>Maintenance Mode</b>\n\nPlease try again later.", parse_mode=HTML)
         return
@@ -117,4 +129,8 @@ async def cmd_broadcast(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
             sent += 1
         except:
             failed += 1
+<<<<<<< HEAD
     await sm.edit_text(f"📢 <b>Done!</b>\n✅ {sent} | ❌ {failed}", parse_mode=HTML)
+=======
+    await sm.edit_text(f"📢 <b>Done!</b>\n✅ {sent} | ❌ {failed}", parse_mode=HTML)
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

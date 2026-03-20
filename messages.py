@@ -8,12 +8,21 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from telegram.constants import ParseMode
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
 from helpers import (is_admin, is_authorized, is_premium, is_vip,
                            is_maintenance, esc, fmt, progress_bar, BACK_BTN,
                            send_log, broadcast_owner)
 from menus import send_welcome, send_fsub_prompt, check_fsub, refresh_fsub
+=======
+import core.database as db
+import core.wa_engine as wa
+from core.helpers import (is_admin, is_authorized, is_premium, is_vip,
+                           is_maintenance, esc, fmt, progress_bar, BACK_BTN,
+                           send_log, broadcast_owner)
+from core.menus import send_welcome, send_fsub_prompt, check_fsub, refresh_fsub
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 HTML = ParseMode.HTML
 
@@ -460,4 +469,8 @@ async def on_document(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         ctx.user_data.clear()
         await _process_numbers(msg, uid, nums[:lims["remaining"]], ctx, always_txt=True)
     except Exception as e:
+<<<<<<< HEAD
         await msg.reply_text(f"❌ Error: {esc(str(e))}")
+=======
+        await msg.reply_text(f"❌ Error: {esc(str(e))}")
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

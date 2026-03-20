@@ -10,8 +10,13 @@ from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
+=======
+import core.database as db
+import core.wa_engine as wa
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 app = FastAPI(title="WA Checker API", docs_url=None, redoc_url=None)
 
@@ -171,4 +176,8 @@ async def check_bulk(body: BulkRequest, key_data: dict = Depends(get_api_key)):
         "unknown":       [r["phone_number"] for r in results if r and r.get("is_registered") is None],
         "checked_at":    datetime.now().isoformat(),
         "powered_by":    _branding(),
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e

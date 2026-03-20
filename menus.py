@@ -4,9 +4,15 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application
 from telegram.constants import ParseMode
 
+<<<<<<< HEAD
 import database as db
 import wa_engine as wa
 from helpers import esc, is_admin, is_premium, is_vip, BACK_BTN
+=======
+import core.database as db
+import core.wa_engine as wa
+from core.helpers import esc, is_admin, is_premium, is_vip, BACK_BTN
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
 
 HTML = ParseMode.HTML
 
@@ -166,4 +172,8 @@ async def send_fsub_prompt(chat_id: int, uid: int, app: Application):
             await app.bot.send_photo(chat_id, fsub_img, caption=body, parse_mode=HTML, reply_markup=markup)
             return
         except: pass
+<<<<<<< HEAD
     await app.bot.send_message(chat_id, body, parse_mode=HTML, reply_markup=markup, disable_web_page_preview=True)
+=======
+    await app.bot.send_message(chat_id, body, parse_mode=HTML, reply_markup=markup, disable_web_page_preview=True)
+>>>>>>> 937f2086d73be9b44218523290134a49f8c47d3e
